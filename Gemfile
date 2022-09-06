@@ -11,6 +11,8 @@ gem 'jquery-rails'
 # rubocop
 gem 'rubocop', require: false
 
+gem 'devise'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
 # Use postgresql as the database for Active Record
