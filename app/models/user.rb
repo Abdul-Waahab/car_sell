@@ -10,14 +10,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
          authentication_keys: [:login]
   validates :phone_number, :email, uniqueness: true, presence: true, confirmation: { case_sensitive: false }
-  validates :first_name, :last_name, length: { minimum: 2, maximum: 30 }
+  validates :user_name, length: { minimum: 2, maximum: 30 }
   validates :phone_number, length: { minimum: 10, maximum: 15 }
 
   validates :password,
             presence: true, confirmation: true,
             format: { with: PASSWORD_FORMAT,
                       message: '(minimum 8 characters with at least one capital letter and a special character)' }
-  validates :password_confirmation, presence: true
 
   def login
     @login || phone_number || email
