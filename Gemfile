@@ -7,7 +7,7 @@ ruby '2.7.0'
 
 gem 'bootstrap'
 gem 'jquery-rails'
-
+gem 'phonelib'
 # rubocop
 gem 'rubocop', require: false
 
