@@ -7,9 +7,11 @@ ruby '2.7.0'
 
 gem 'bootstrap'
 gem 'jquery-rails'
-
+gem 'phonelib'
 # rubocop
 gem 'rubocop', require: false
+
+gem 'devise'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
