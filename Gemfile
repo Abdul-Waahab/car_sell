@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'wicked'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'phonelib'
@@ -12,6 +13,7 @@ gem 'phonelib'
 gem 'rubocop', require: false
 
 gem 'devise'
+gem 'select2-rails', '~> 4.0', '>= 4.0.13'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.8', '>= 5.2.8.1'
@@ -38,6 +40,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
+gem "image_processing"
+gem "aws-sdk-s3", require: false
+gem "active_storage_validations"
 # gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment

@@ -1,0 +1,12 @@
+
+<div class="container">
+  <%= link_to 'Create Post',new_post_path(@post) if user_signed_in? %>
+  <% @post.each do |post| %> 
+    <h2> <%= post.price %> </h2>
+    <div><%= truncate(post.milage, length: 35) %></div>
+    <br>
+    <%= link_to 'Read Post',post_path(post) %>
+  <% end %>
+  </p>
+</div>
+

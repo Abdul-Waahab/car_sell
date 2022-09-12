@@ -1,0 +1,6 @@
+<h1><%= @post.color %></h1>
+<div>
+<%= @post.milage %></div>  
+
+<%=link_to "Edit Post", edit_post_path(@post) if user_signed_in? %>
+<%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} if user_signed_in? %>
