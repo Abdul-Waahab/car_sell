@@ -2,13 +2,7 @@
 # All this logic will automatically be available in application.js.
 # You can use CoffeeScript in this file: http://coffeescript.org/
 select_to_select2 = ->
-  $('#post_city').select2( { tags: true } )
-
-$(document).on 'turbolinks:load', ->
-  select_to_select2()
-
-select_to_select2 = ->
-  $('#post_color').select2( { tags: true } )
+  $('#post_city, #post_color').select2( { tags: true } )
 
 $(document).on 'turbolinks:load', ->
   select_to_select2()
