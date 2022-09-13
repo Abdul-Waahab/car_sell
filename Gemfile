@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'kaminari'
 gem 'wicked'
 gem 'bootstrap'
 gem 'jquery-rails'
@@ -43,7 +44,7 @@ gem 'jbuilder', '~> 2.5'
 gem "image_processing"
 gem "aws-sdk-s3", require: false
 gem "active_storage_validations"
-# gem 'mini_magick', '~> 4.8'
+gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

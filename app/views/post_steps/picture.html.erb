@@ -1,32 +1,16 @@
-picture
-
 <div class="container-fluid w-25 border rounded shadow mt-5 p-4 ">
 <section class="form-auth text-center">
-  <%= form_for @post, url: wizard_path do |f| %>
+  <%= form_for @post, url: next_wizard_path, method: "PUT" do |f| %>
     <%= f.hidden_field :post_id, value: @post.id %>
-
-    <input type='file' onchange="readURL(this);" id= "image_id" multiple />
-      <img id="img_prev" />
+				<%= f.file_field :pictures, onchange:"readURL(this);", class: "form-control", multiple: true %>
+        <img id="img_prev" />
       
       <div class="actions">
         <%= link_to "Back", post_steps_path %>or
-        <%= link_to "next", next_wizard_path %>
+        <%= f.submit "next" %>
       </div>
   
     <% end %><br>
 </section>
 </div>
-
-<script>
-	function readURL(input) {
-		if (input.files && input.files[0]) {
-			var reader = new FileReader();
-			reader.onload = function (e) {
-				$('#img_prev')
-					.attr('src', e.target.result)
-			};
-			reader.readAsDataURL(input.files[0]);
-		}
-	}
-</script>
 

@@ -12,7 +12,6 @@
             <br>
           </div>
         </div>
-
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :milage, class: "form-label" %>
@@ -26,7 +25,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :car_make, class: "form-label" %>
-            <%= f.select :car_make, options_for_select([['Suzuki', 'suzuki'],['Toyota', 'toyota'],['honda', 'honda'],['BMW ', 'bmw']])%>
+            <%= f.select :car_make, options_for_select([['Suzuki', 'suzuki'],['Toyota', 'toyota'],['honda', 'honda'],['BMW ', 'bmw']]), {include_blank: true}%>
             <br>
           </div>
         </div>

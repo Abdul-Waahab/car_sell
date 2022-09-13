@@ -16,7 +16,7 @@ class PostStepsController < ApplicationController
     end
     if params[:id] == 'wicked_finish'
       @post.update(contact_params)
-      render "wicked_finish", notice: "Thanks for posting an AD."
+      render "wicked_finish"
     else
       render_wizard
     end
@@ -40,8 +40,8 @@ class PostStepsController < ApplicationController
   end
 
   def contact_params
-    params.require(:post).permit(:primary_contact, :secondary_contact)
- 
+    permitted_params = params.require(:post).permit(:primary_contact, :secondary_contact)
+    #permitted_params.merge!(user_id: current_user.id)
+    #permitted_params
   end
-
 end

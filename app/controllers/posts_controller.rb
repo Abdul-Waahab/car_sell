@@ -18,18 +18,11 @@ class PostsController < ApplicationController
     end
   end    
 
-  def show   
-  end   
+  def show;end   
 
   def edit;end
 
-  def update
-    if @post.update_attributes(post_params)
-      redirect_to post_path 
-      else
-      render :edit
-    end
-  end
+  def update;end
 
   def destroy
     @post.destroy
