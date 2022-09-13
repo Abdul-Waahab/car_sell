@@ -2,21 +2,22 @@
 
 class User < ApplicationRecord
   attr_accessor :login
+
   has_many :posts
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   PASSWORD_FORMAT = /\A(?=.{8,})(?=.*[A-Z])(?=.*[[:^alnum:]])/x.freeze
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable,
          authentication_keys: [:login]
-    
+
   validates :phone_number, :email, uniqueness: true, confirmation: { case_sensitive: false }
   validates :user_name, length: { minimum: 2, maximum: 30 }
   # validates :phone_number, phone: { possible: true, allow_blank: true }
 
   validates :password,
-          presence: true, confirmation: true,
-          format: { with: PASSWORD_FORMAT,
-                    message: '(minimum 8 characters with at least one capital letter and a special character)' }
+            presence: true, confirmation: true,
+            format: { with: PASSWORD_FORMAT,
+                      message: '(minimum 8 characters with at least one capital letter and a special character)' }
 
   def login
     @login || phone_number || email

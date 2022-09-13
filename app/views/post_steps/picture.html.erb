@@ -1,16 +1,16 @@
 <div class="container-fluid w-25 border rounded shadow mt-5 p-4 ">
-<section class="form-auth text-center">
-  <%= form_for @post, url: next_wizard_path, method: "PUT" do |f| %>
-    <%= f.hidden_field :post_id, value: @post.id %>
-				<%= f.file_field :pictures, onchange:"readURL(this);", class: "form-control", multiple: true %>
-        <img id="img_prev" />
-      
-      <div class="actions">
-        <%= link_to "Back", post_steps_path %>or
-        <%= f.submit "next" %>
-      </div>
-  
-    <% end %><br>
-</section>
+	<section class="form-auth text-center">
+		<%= form_for @post, url: next_wizard_path, method: "PUT" do |f| %>
+			<%= f.hidden_field :post_id, value: @post.id %>
+					<%= f.file_field :pictures, class: "form-control", multiple: true %>
+					<img id="img_prev" />
+				
+				<div class="actions">
+					<%= link_to "Back", post_steps_path %>or
+					<%= f.submit "next" %>
+				</div>
+		
+			<% end %><br>
+	</section>
 </div>
 

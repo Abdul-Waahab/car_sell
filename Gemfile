@@ -5,11 +5,11 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
-gem 'kaminari'
-gem 'wicked'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'kaminari'
 gem 'phonelib'
+gem 'wicked'
 # rubocop
 gem 'rubocop', require: false
 
@@ -41,9 +41,9 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 
 # Use ActiveStorage variant
-gem "image_processing"
-gem "aws-sdk-s3", require: false
-gem "active_storage_validations"
+gem 'active_storage_validations'
+gem 'aws-sdk-s3', require: false
+gem 'image_processing'
 gem 'mini_magick', '~> 4.8'
 
 # Use Capistrano for deployment

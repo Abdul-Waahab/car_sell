@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class PostStepsController < ApplicationController
   include Wicked::Wizard
   steps :details, :picture, :contact
@@ -5,18 +7,16 @@ class PostStepsController < ApplicationController
 
   def show
     render_wizard
-  end  
-  
+  end
+
   def update
     case step
-    when :picture
-      @post.update(detail_params)
-    when :contact
-      @post.update(image_params)
+    when :picture then @post.update(detail_params)
+    when :contact then @post.update(image_params)
     end
     if params[:id] == 'wicked_finish'
       @post.update(contact_params)
-      render "wicked_finish"
+      render 'wicked_finish'
     else
       render_wizard
     end
@@ -25,14 +25,22 @@ class PostStepsController < ApplicationController
   def wicked_finish; end
 
   private
-  
+
   def find_post
-    @post = Post.find_by(id: params[:post].present? ? params[:post][:post_id] : params[:post_id])
-    @post = Post.new if @post.blank?
+    @post = if post_id.present?
+              Post.find_by(id: post_id)
+            else
+              Post.new
+            end
+  end
+
+  def post_id
+    params[:post].present? ? params[:post][:post_id] : params[:post_id]
   end
 
   def detail_params
-    params.require(:post).permit(:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type, :engine_capacity, :add_discription, :assembly_type, :primary_contact, :secondary_contact,  :user_id)
+    params.require(:post).permit(:city, :color, :car_make, :engine_type, :milage, :price, :transmission_type,
+                                 :engine_capacity, :add_discription, :assembly_type, :user_id)
   end
 
   def image_params
@@ -40,8 +48,6 @@ class PostStepsController < ApplicationController
   end
 
   def contact_params
-    permitted_params = params.require(:post).permit(:primary_contact, :secondary_contact)
-    #permitted_params.merge!(user_id: current_user.id)
-    #permitted_params
+    params.require(:post).permit(:primary_contact, :secondary_contact, :user_id)
   end
 end

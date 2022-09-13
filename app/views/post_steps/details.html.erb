@@ -8,7 +8,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :city, class: "form-label" %>
-            <%= f.select :city, options_for_select([['Lahore', 'lahore'],['Karachi', 'karachi'],['Islamabad', 'islamabad'],['Quetta', 'quetta'],['Rawalpindi', 'rawalpindi']]), {include_blank: true}%>
+            <%= f.select :city, options_for_select(Post::CITY), {include_blank: true}%>
             <br>
           </div>
         </div>
@@ -25,7 +25,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :car_make, class: "form-label" %>
-            <%= f.select :car_make, options_for_select([['Suzuki', 'suzuki'],['Toyota', 'toyota'],['honda', 'honda'],['BMW ', 'bmw']]), {include_blank: true}%>
+            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}%>
             <br>
           </div>
         </div>
@@ -33,7 +33,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :engine_Type, class: "form-label" %>
-            <%= f.select :engine_type, options_for_select([['Petrol', 'petrol'],['Diesel', 'diesel'],['Hybrid', 'hybrid']]), {include_blank: true}%>
+            <%= f.select :engine_type, options_for_select(Post::ENGINE_TYPE), {include_blank: true}%>
             <br>
           </div>
         </div>
@@ -51,7 +51,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :transmission_type, class: "form-label" %>
-            <%= f.select :transmission_type, options_for_select([['Automatic', 'automatic'],['Manual', 'manual']]), {include_blank: true}%>
+            <%= f.select :transmission_type, options_for_select(Post::TRANSMISSION_TYPE), {include_blank: true}%>
             <br>
           </div>
         </div>
@@ -61,7 +61,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :color, class: "form-label" %>
-            <%= f.select :color, options_for_select([['Black', 'black'],['White', 'white'],['Gray', 'gray'],['Silver', 'silver'],['Red', 'red']]), {include_blank: true}%>
+            <%= f.select :color, options_for_select(Post::COLOR), {include_blank: true}%>
             <br>
           </div>
         </div>
@@ -69,7 +69,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :assembly_Type, class: "form-label" %>
-            <%= f.select :assembly_type, options_for_select([['Local', 'local'],['Imported', 'imported']]), {include_blank: true}%>
+            <%= f.select :assembly_type, options_for_select(Post::ASSEMBLY_TYPE), {include_blank: true}%>
             <br>
           </div>
         </div>
@@ -79,7 +79,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :engine_capacity, class: "form-label" %>
-            <%= f.select :engine_capacity, options_for_select([['Lahore', 'lahore'],['Karachi', 'karachi'],['Islamabad', 'islamabad']]), {include_blank: true}%>
+            <%= f.select :engine_capacity, options_for_select(Post::ENGINE_CAPACITY), {include_blank: true}%>
             <br>
           </div>
         </div>
@@ -91,12 +91,11 @@
               <%= f.label:add_discription %><br>
               <%= f.text_area:add_discription %><br>
             </div>
-          </div>
-        </div>  
-        <br>
-
-    <%= f.hidden_field:user_id, value: current_user.id %>
-    <%= f.submit "next >" %>
-    <% end %>
-  </div>
+          </div> 
+        </div>
+        <%= f.hidden_field:user_id, value: current_user.id %>
+        <%= f.submit "next >" %>
+      </div>
+    </div>  
+  <% end %>
 </div>
