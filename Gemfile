@@ -5,6 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.0'
 
+gem 'pg_search'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'kaminari'

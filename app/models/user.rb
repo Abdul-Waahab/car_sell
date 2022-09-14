@@ -10,9 +10,9 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable, :confirmable,
          authentication_keys: [:login]
 
-  validates :phone_number, :email, uniqueness: true, confirmation: { case_sensitive: false }
+  validates :email, uniqueness: true, confirmation: { case_sensitive: false }
+  validates :phone_number, phone: true
   validates :user_name, length: { minimum: 2, maximum: 30 }
-  # validates :phone_number, phone: { possible: true, allow_blank: true }
 
   validates :password,
             presence: true, confirmation: true,
