@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class FavouritesController < ApplicationController
   def update
     favourite = Favourite.where(post: Post.find(params[:post]), user: current_user)
@@ -8,15 +10,12 @@ class FavouritesController < ApplicationController
       favourite.destroy_all
       @favourite_exists = false
     end
-    respond_to do |format|
-      format.js {}  
-    end
+    respond_to { |format| format.js }
   end
 
-  def show;end
+  def show; end
 
   def index
     @favourites = Favourite.order(:id).page(params[:page])
-  end  
-
+  end
 end

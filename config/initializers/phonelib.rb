@@ -1,1 +1,3 @@
-Phonelib.default_country = "PK"
+# frozen_string_literal: true
+
+Phonelib.default_country = 'PK'

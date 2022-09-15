@@ -4,7 +4,7 @@ class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
 
   def index
-    @post = Post.order(:id).page(params[:page]) 
+    @post = Post.order(:id).page(params[:page])
   end
 
   def new
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
   end
 
   def show
-      @favourite_exists = Favourite.where(post: @post, user: current_user) == [] ? false : true 
+    @favourite_exists = Favourite.where(post: @post, user: current_user) != []
   end
 
   def edit; end
