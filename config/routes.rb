@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get :dashboard, controller: :home
   resources :posts
   resources :post_steps
+  resources :favourites
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

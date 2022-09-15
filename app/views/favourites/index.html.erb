@@ -1,0 +1,8 @@
+<div class="container-fluid w-75 h-100 mt-5 p-5 text-right border bg-light ">
+	
+  <h1> Favourites Posts:</h1>
+  <% current_user.favourites.each do |favourite| %>
+    your favourite posts:<%= link_to favourite.post.car_make, post_path(favourite.post) %><br>
+  <% end %>
+  <%= paginate @favourite %>
+</div>  
