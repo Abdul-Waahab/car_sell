@@ -1,0 +1,88 @@
+<div class="container-fluid w-50 border rounded shadow mt-5 p-4 text-right border bg-light ">
+  <div class="container-fluid">
+    <%= image_tag @post.pictures.first, style: "width:300px;height:200px" if @post.pictures.attached? %>
+    
+    <div class="row mt-3 align-items-start">
+      <div class="col-sm">
+        <h6> City: </h6>
+        <%= @post.city %>
+        <br>
+      </div>
+      <div class="col">
+        <h6>Car Make/Model: </h6>
+        <%= @post.car_make %>
+        <br>
+      </div>
+    </div>
+
+    <div class="row align-items-start">
+      <div class="col-sm">
+        <h6> Milage </h6>
+        <%= @post.milage %>
+        <br>
+      </div>
+      <div class="col-sm">
+        <h6>Engine_Type: </h6>
+        <%= @post.engine_type%>
+        <br>
+      </div>
+    </div>
+
+    <div class="row align-items-start">
+      <div class="col-sm">
+        <h6> Color: </h6>
+        <%= @post.color %>
+        <br>
+      </div>
+      <div class="col-sm">
+        <h6> Price: </h6>
+        <%= @post.price%>
+        <br>
+      </div>  
+    </div> 
+
+    <div class="row align-items-start">
+      <div class="col-sm">
+        <h6> Transmission_Type: </h6>
+        <%= @post.transmission_type %>
+        <br>
+      </div>
+      <div class="col-sm">
+        <h6> Engine_Capacity </h6>
+        <%= @post.engine_capacity%>
+        <br>
+      </div>
+    </div> 
+
+    <div class="row align-items-start">
+      <div class="col-sm">
+        <h6> Primary_Contact: </h6>
+        <%= @post.primary_contact %>
+        <br>
+      </div>
+      <div class="col-sm">
+        <h6> Secondary_Contact </h6>
+        <%= @post.secondary_contact%>
+        <br>
+      </div>
+    </div> 
+
+    <div class="row align-items-start">
+      <div class="col-sm">
+        <h6> Assembly_Type: </h6>
+        <%= @post.assembly_type %>
+        <br>
+      </div> 
+    </div>
+
+    <div class="row align-items-start">
+      <div class="col-sm">
+        <h6> Discription: </h6>
+        <%= @post.add_discription %>
+        <br>
+      </div>
+    </div>     
+  </div> 
+  <%=link_to "Edit Post", post_steps_path(post_id: @post.id) if user_signed_in? %>
+  <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} if user_signed_in? %>
+</div>

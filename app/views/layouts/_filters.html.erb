@@ -1,0 +1,161 @@
+<div class="container-fluid w-75 border rounded shadow mt-5 p-4 text-right border bg-light ">
+  <h4>Find Cars</h4>
+  <div class="container text-center">
+    <div class="row align-items-start">
+      <div class="col-sm">
+        <div class="dropdown show">
+          <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Car Make/Model
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Suzuki</a></li>
+              <li><a class="dropdown-item" href="#">Toyota</a></li>
+              <li><a class="dropdown-item" href="#">Mehran</a></li>
+            </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="dropdown show">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                All cities
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Lahore</a></li>
+                <li><a class="dropdown-item" href="#">Karachi</a></li>
+                <li><a class="dropdown-item" href="#">Islamabad</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="dropdown show">
+            <div class="dropdown">
+              <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Price Range
+              </button>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">2lac-4lac</a></li>
+                  <li><a class="dropdown-item" href="#">5lac-10lac</a></li>
+                  <li><a class="dropdown-item" href="#">10lac-15lac</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <% if show_more %>
+      <div class="container text-center">
+        <div class="row mt-3 align-items-start">
+          <div class="col-sm">
+            <div class="dropdown show">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Engine Detail
+                </button>
+                <ul class="dropdown-menu">
+                  <li><a class="dropdown-item" href="#">Petrol</a></li>
+                  <li><a class="dropdown-item" href="#">Diesel</a></li>
+                  <li><a class="dropdown-item" href="#">Hybrid</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+            <div class="col-sm">
+              <div class="dropdown show">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Transmission Type
+                </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Automatic</a></li>
+                      <li><a class="dropdown-item" href="#">Manual</a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-sm">
+              <div class="dropdown show">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    Color
+                </button>
+                    <ul class="dropdown-menu">
+                      <li><a class="dropdown-item" href="#">Black</a></li>
+                      <li><a class="dropdown-item" href="#">White</a></li>
+                      <li><a class="dropdown-item" href="#">Gray</a></li>
+                    </ul>
+                </div>
+              </div>
+            </div>
+        </div>
+      </div>
+
+      <div class="container text-center">
+        <div class="row mt-3 align-items-start">
+          <div class="col-sm">
+            <div class="dropdown show">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Milage
+                </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">5km-10km</a></li>
+                    <li><a class="dropdown-item" href="#">10km-15km</a></li>
+                    <li><a class="dropdown-item" href="#">15km-20km</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>	
+
+          <div class="col-sm">
+            <div class="dropdown show">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Engine Capacity
+              </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">800cc</a></li>
+                    <li><a class="dropdown-item" href="#">1300cc</a></li>
+                    <li><a class="dropdown-item" href="#">1500cc</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>	
+
+          <div class="col-sm">
+            <div class="dropdown show">
+              <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle w-50" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Assembly Type
+              </button>
+                  <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href="#">Local</a></li>
+                    <li><a class="dropdown-item" href="#">Imported</a></li>
+                  </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    <% end %>
+    
+    <div class="row my-5">
+      <div class="col-sm">
+        <%= link_to "#{show_more ? "Less Search Options" : "More Search Options"}", dashboard_path(show_more: !show_more), remote: true %>
+      </div>
+      <div class="col-sm text-center">
+      <button type="button" class="btn btn-secondary">Search</button>
+      <button type="button" class="btn btn-light">Clear Filter</button>
+      </div>
+    </div>
+
+  </div>
+</div>
