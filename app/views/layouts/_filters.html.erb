@@ -1,19 +1,19 @@
 <div class="container-fluid w-75 border rounded shadow mt-5 p-4 text-right border bg-light ">
-  <%= form_with model: @post, url: posts_path, method: :post, local: true do |f| %>
+  <%= form_with model: @post, url: dashboard_path, method: 'get', local: true do |f| %>
     <h4>Find Cars</h4>
     <div class="container text-center">
       <div class="row row-cols-3">
         <div class="col">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :Car_Make, class: "form-label" %>
-            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}, class: "mx-0 form-select" %>
+            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}, class: "mx-0 form-select"%>
             <br>
           </div>
         </div>
 
         <div class="col">
           <div class="dropdown field mb-3 text-start">
-            <%= f.label :All_Cities, class: "form-label" %>
+            <%= f.label :All_Cities, class: "form-label" %>true
             <%= f.select :city, options_for_select(Post::CITY), {include_blank: true}, class: "mx-0 form-select" %>
             <br>
           </div>
@@ -22,7 +22,7 @@
         <div class="col">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :Price, class: "form-label" %>
-            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}, class: "mx-0 form-select" %>
+            <%= f.select :price, options_for_select(Post::PRICE), {include_blank: true}, class: "mx-0 form-select" %>
             <br>
           </div>
         </div>
@@ -55,7 +55,7 @@
         <div class="col">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :Milage, class: "form-label" %>
-            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}, class: "mx-0 form-select" %>
+            <%= f.select :milage, options_for_select(Post::MILAGE), {include_blank: true}, class: "mx-0 form-select" %>
             <br>
           </div>
         </div>
@@ -87,4 +87,11 @@
       </div>
     </div>
   <% end %>
-</div>  
+</div> 
+
+<div class="container-fluid w-75 h-100 mt-5 p-5 text-right border bg-light ">
+  <h1> Search Result:</h1>
+  <% @result&.each do |result| %>
+  <%= link_to result.searchable.car_make, post_path(result.searchable) %><br>
+  <% end %>
+</div>

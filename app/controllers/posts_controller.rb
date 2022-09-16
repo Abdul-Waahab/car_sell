@@ -2,6 +2,7 @@
 
 class PostsController < ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
+  before_action :authorization, except: %i[show index new create]
 
   def index
     @post = Post.order(:id).page(params[:page])
@@ -37,6 +38,10 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def authorization
+    authorize @post
+  end
 
   def find_post
     @post = Post.find(params[:id])
