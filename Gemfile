@@ -8,6 +8,7 @@ ruby '2.7.0'
 gem 'bootstrap'
 gem 'jquery-rails'
 gem 'kaminari'
+gem 'pg_search'
 gem 'phonelib'
 gem 'wicked'
 # rubocop

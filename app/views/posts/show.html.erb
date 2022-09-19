@@ -85,4 +85,5 @@
   </div> 
   <%=link_to "Edit Post", post_steps_path(post_id: @post.id) if user_signed_in? %>
   <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} if user_signed_in? %>
+  <%=link_to "Back", posts_path %>
 </div>
