@@ -10,6 +10,7 @@ gem 'jquery-rails'
 gem 'kaminari'
 gem 'pg_search'
 gem 'phonelib'
+gem 'pundit'
 gem 'wicked'
 # rubocop
 gem 'rubocop', require: false

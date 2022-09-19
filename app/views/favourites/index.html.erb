@@ -3,6 +3,6 @@
   <h1> Favourites Posts:</h1>
   <% @favourites.each do |favourite| %>
     your favourite posts:<%= link_to favourite.post.car_make, post_path(favourite.post) %><br>
-  <% end %>
+  <% end %><br>
   <%= paginate @favourites %>
 </div>  

@@ -15,7 +15,7 @@
         <div class="col-sm">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :milage, class: "form-label" %>
-            <%= f.text_field :milage %>
+            <%= f.text_field :milage, {include_blank: true} %>
             <br>
           </div>
         </div>
@@ -94,7 +94,7 @@
           </div> 
         </div>
         <%= f.hidden_field:user_id, value: current_user.id %>
-        <%= f.submit "next >" %>
+        <%= f.submit "next >",class: "btn btn-primary" %>
       </div>
     </div>  
   <% end %>

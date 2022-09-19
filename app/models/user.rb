@@ -12,13 +12,13 @@ class User < ApplicationRecord
          authentication_keys: [:login]
 
   validates :email, uniqueness: true, confirmation: { case_sensitive: false }
-  validates :phone_number, phone: true
   validates :user_name, length: { minimum: 2, maximum: 30 }
 
   validates :password,
             presence: true, confirmation: true,
             format: { with: PASSWORD_FORMAT,
                       message: '(minimum 8 characters with at least one capital letter and a special character)' }
+  validates :phone_number, phone: { possible: true, allow_blank: true }
 
   def login
     @login || phone_number || email

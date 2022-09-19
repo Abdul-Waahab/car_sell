@@ -12,6 +12,14 @@ class HomeController < ApplicationController
   end
 
   def dashboard
+    @result = PgSearch.multisearch(search_params.values)
     @show_more = ActiveModel::Type::Boolean.new.cast(params[:show_more])
+  end
+
+  private
+
+  def search_params
+    params.permit(:car_make, :city, :price, :engine_type, :transmission_type, :color, :milage, :engine_capacity,
+                  :assembly_type)
   end
 end
