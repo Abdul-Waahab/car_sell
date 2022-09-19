@@ -5,7 +5,6 @@ class Post < ApplicationRecord
   multisearchable against: [:car_make, :city, :engine_type, :engine_capacity, :assembly_type, :color,
                             :transmission_type]
   belongs_to :user
-
   has_many_attached :pictures
 
   CITY = [%w[Lahore lahore], %w[Karachi karachi], %w[Islamabad islamabad], %w[Quetta quetta],

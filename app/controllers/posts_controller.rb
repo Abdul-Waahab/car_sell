@@ -20,7 +20,9 @@ class PostsController < ApplicationController
     end
   end
 
-  def show; end
+  def show
+    @favourite_exists = Favourite.where(post: @post, user: current_user) != []
+  end
 
   def edit; end
 
