@@ -13,7 +13,7 @@
 
         <div class="col">
           <div class="dropdown field mb-3 text-start">
-            <%= f.label :All_Cities, class: "form-label" %>true
+            <%= f.label :All_Cities, class: "form-label" %>
             <%= f.select :city, options_for_select(Post::CITY), {include_blank: true}, class: "mx-0 form-select" %>
             <br>
           </div>
@@ -74,13 +74,12 @@
             <br>
           </div>
         </div>
-      
       <% end %>
           <div class="col-sm-6">
             <%= link_to "#{show_more ? "Less Search Options" : "More Search Options"}", dashboard_path(show_more: !show_more), remote: true %>
           </div>
           <div class="col-sm-6 text-center">
-            <%= f.submit "Search" %> <br>
+            <%= f.submit "Search", class: "btn btn-secondary" %>
             <button type="button" class="btn btn-light">Clear Filter</button>
           </div>
         </div>
@@ -89,9 +88,9 @@
   <% end %>
 </div> 
 
-<div class="container-fluid w-75 h-100 mt-5 p-5 text-right border bg-light ">
-  <h1> Search Result:</h1>
+<div class="container-fluid w-75 mt-5 p-5 text-right border bg-light ">
+  <h4> Search Result:</h4>
   <% @result&.each do |result| %>
-  <%= link_to result.searchable.car_make, post_path(result.searchable) %><br>
+    <%= link_to result.searchable.car_make, post_path(result.searchable) %><br>
   <% end %>
 </div>

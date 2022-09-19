@@ -2,19 +2,19 @@
   <section class="form-auth text-center">
     <%= form_for @post, url: next_wizard_path, method: "PUT" do |f| %>
       <%= f.hidden_field :post_id, value: @post.id %>
-      <h1 class="h3 mb-3 fw-normal">Contact Information</h1><br>
-      <form class="form-inline">
-        <div class="form-group">  
-          <%= f.label :primary_contact, class: "form-label" %>
-          <%= f.text_field :primary_contact, autofocus: true %><br><br>
-          <%= f.label :secondry_contact, class:"form-label" %>
-          <%= f.text_field :secondary_contact, autofocus: true %><br><br><br>
+      <h1 class="h3 mb-3 fw-normal">Contact Information </h1><br>
+      
+      <div class="form-group">  
+        <%= f.label :primary_contact, class: "form-label" %>
+        <%= f.text_field :primary_contact, autofocus: true %><br><br>
+        <%= f.label :secondry_contact, class:"form-label" %>
+        <%= f.text_field :secondary_contact, autofocus: true %><br><br><br>
       </div>
       
       <button class="w-20 btn btn-lg btn-primary " type="submit">Get Featured</button><br><br>
       <%= f.hidden_field:user_id, value: current_user.id %>
-      <%= f.submit "POST AD" %> <br>
-      <%= link_to "Back", previous_wizard_path %>
-    <% end %><br>
+      <%= link_to "Back", previous_wizard_path, class: "btn btn-secondary" %>
+      <%= f.submit "POST AD", class:"btn btn-primary"%>
+    <% end %>
   </section>
 </div>
