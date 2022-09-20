@@ -6,7 +6,7 @@
         <div class="col">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :Car_Make, class: "form-label" %>
-            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}, class: "mx-0 form-select"%>
+            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: 'Car Make'}, class: "mx-0 form-select"%>
             <br>
           </div>
         </div>
@@ -22,7 +22,7 @@
         <div class="col">
           <div class="dropdown field mb-3 text-start">
             <%= f.label :Price, class: "form-label" %>
-            <%= f.select :price, options_for_select(Post::PRICE), {include_blank: true}, class: "mx-0 form-select" %>
+            <%= f.select :price, options_for_select({'upto 5 lacs': 10000}), {:prompt => 'Price'}, class: "mx-0 form-select" %>
             <br>
           </div>
         </div>
@@ -93,4 +93,5 @@
   <% @result&.each do |result| %>
     <%= link_to result.searchable.car_make, post_path(result.searchable) %><br>
   <% end %>
+  <%= paginate @result %>
 </div>

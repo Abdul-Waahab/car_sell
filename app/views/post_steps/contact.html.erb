@@ -11,7 +11,7 @@
         <%= f.text_field :secondary_contact, autofocus: true %><br><br><br>
       </div>
       
-      <button class="w-20 btn btn-lg btn-primary " type="submit">Get Featured</button><br><br>
+      <%= link_to "Get Featured",checkout_index_path(id: @post.id),method: 'post', remote: true, class: "btn btn-primary" %><br><br>
       <%= f.hidden_field:user_id, value: current_user.id %>
       <%= link_to "Back", previous_wizard_path, class: "btn btn-secondary" %>
       <%= f.submit "POST AD", class:"btn btn-primary"%>

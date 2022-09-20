@@ -11,6 +11,7 @@ gem 'kaminari'
 gem 'pg_search'
 gem 'phonelib'
 gem 'pundit'
+gem 'stripe'
 gem 'wicked'
 # rubocop
 gem 'rubocop', require: false
