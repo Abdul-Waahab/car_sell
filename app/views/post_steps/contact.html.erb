@@ -13,7 +13,7 @@
       
       <%= link_to "Get Featured",checkout_index_path(id: @post.id),method: 'post', remote: true, class: "btn btn-primary" %><br><br>
       <%= f.hidden_field:user_id, value: current_user.id %>
-      <%= link_to "Back", previous_wizard_path, class: "btn btn-secondary" %>
+      <%= link_to "Back", previous_wizard_path(post_id: @post.id), class: "btn btn-secondary" %>
       <%= f.submit "POST AD", class:"btn btn-primary"%>
     <% end %>
   </section>

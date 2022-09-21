@@ -2,7 +2,7 @@
 	
   <h1> Favourites Posts:</h1>
   <% @favourites.each do |favourite| %>
-    your favourite posts:<%= link_to favourite.post.car_make, post_path(favourite.post) %><br>
+    your favourite posts:<%= link_to favourite.post&.car_make, post_path(favourite.post&.id) %><br>
   <% end %><br>
   <%= paginate @favourites %>
 </div>  

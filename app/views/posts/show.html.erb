@@ -82,9 +82,9 @@
       </div>
     </div>     
   </div> 
-  <%=link_to "Edit Post", post_steps_path(post_id: @post.id) if user_signed_in? %>
-  <%=link_to "Delete", post_path(@post), method: :delete, data: {confirm: "Are you sure?"} if user_signed_in? %>
-  <%=link_to "Back", posts_path %>
-  <%=link_to favourite_text, favourite_path(post: @post), method: 'put', id:"favourite_link", remote: true %>
+  <%=link_to "Edit Post", post_steps_path(post_id: @post.id),class: "btn btn-secondary" if user_signed_in? %>
+  <%=link_to "Delete", post_path(@post),class: "btn btn-danger", method: :delete, data: {confirm: "Are you sure?"} if user_signed_in? %>
+  <%=link_to "Back", posts_path, class: "btn btn-secondary" %>
+  <%=link_to favourite_text, favourite_path(post: @post), method: 'put', id:"favourite_link", class: "btn btn-primary", remote: true %>
 
 </div>
