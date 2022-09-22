@@ -12,7 +12,7 @@ class HomeController < ApplicationController
   end
 
   def dashboard
-    @result = PgSearch.multisearch(search_params.values)
+    @result = PgSearch.multisearch(search_params.values).page(params[:page])
     @show_more = ActiveModel::Type::Boolean.new.cast(params[:show_more])
   end
 

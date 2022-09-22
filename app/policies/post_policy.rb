@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 class PostPolicy < ApplicationPolicy
   alias post record
 
   def new?
     user.present?
   end
-   
+
   def create?
     user.present?
   end
@@ -16,8 +18,8 @@ class PostPolicy < ApplicationPolicy
   def update?
     user.present?
   end
-   
+
   def destroy?
-    user.present? 
-  end   
+    user.present?
+  end
 end
