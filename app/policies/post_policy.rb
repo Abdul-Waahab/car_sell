@@ -12,14 +12,14 @@ class PostPolicy < ApplicationPolicy
   end
 
   def edit?
-    user.present?
+    user.id == post.user_id
   end
 
   def update?
-    user.present?
+    user.id == post.user_id
   end
 
   def destroy?
-    user.present?
+    user.id == post.user_id
   end
 end
