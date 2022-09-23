@@ -27,11 +27,17 @@ class PostsController < ApplicationController
 
   def edit; end
 
-  def update; end
+  def update
+    if @post.update_attributes(post_params)
+      redirect_to post_path
+    else
+      render :edit
+    end
+  end
 
   def destroy
     if @post.destroy
-      redirect_to root_path
+      redirect_to posts_path
     else
       redirect_to posts_path, alert: 'Try Later'
     end

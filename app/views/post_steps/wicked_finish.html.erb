@@ -1,1 +1,10 @@
-Congratulations! You're Successfully posted an Ad.
+<div class="container-fluid w-25 border rounded shadow mt-5 p-4 ">
+	<section class="form-auth text-center">
+    <%= form_for @post, url: next_wizard_path, method: "PUT" do |f| %>
+      <%= f.hidden_field :post_id, value: @post.id %>
+      <%= link_to "Get Featured",checkout_index_path(id: @post.id),method: 'post', remote: true, class: "btn btn-primary" %><br><br>
+      <h6>or</h6>
+      <%=link_to "Ignore", root_path, class: "btn btn-secondary" %>
+    <% end %>
+  </section>
+</div>

@@ -86,12 +86,12 @@
       </div>
     </div>
   <% end %>
+  
+  <div class="container-fluid w-75 mb-5 mt-5 p-5 text-right border bg-light ">
+    <h4> Search Result:</h4>
+    <% @result&.each do |result| %>
+      <%= link_to result.searchable.car_make, post_path(result.searchable) %><br>
+    <% end %>
+    <%= paginate @result %>
+  </div>
 </div> 
-
-<div class="container-fluid w-75 mt-5 p-5 text-right border bg-light ">
-  <h4> Search Result:</h4>
-  <% @result&.each do |result| %>
-    <%= link_to result.searchable.car_make, post_path(result.searchable) %><br>
-  <% end %>
-  <%= paginate @result %>
-</div>
