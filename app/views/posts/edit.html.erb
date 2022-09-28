@@ -1,0 +1,118 @@
+<div class="container-fluid w-50 border rounded shadow mt-5 mb-5 p-4 text-right border bg-light ">
+  <%= form_for @post do |f| %>
+    <%= f.hidden_field :post_id, value: params[:post_id] %>
+    <h3 class="h3 mb-3 fw-normal">Car Information</h3>
+    <br>
+    <div class="container-fluid">
+      <div class="row mt-3 align-items-start">
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :city, class: "form-label" %>
+            <%= f.select :city, options_for_select(Post::CITY), {include_blank: true}%>
+            <br>
+          </div>
+        </div>
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :milage, class: "form-label" %>
+            <%= f.text_field :milage, {include_blank: true} %>
+            <br>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-items-start">
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :car_make, class: "form-label" %>
+            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}%>
+            <br>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :engine_Type, class: "form-label" %>
+            <%= f.select :engine_type, options_for_select(Post::ENGINE_TYPE), {include_blank: true}%>
+            <br>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row align-items-start">
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :price, class: "form-label" %>
+            <%= f.text_field :price %>
+            <br>
+          </div>
+        </div>    
+
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :transmission_type, class: "form-label" %>
+            <%= f.select :transmission_type, options_for_select(Post::TRANSMISSION_TYPE), {include_blank: true}%>
+            <br>
+          </div>
+        </div>
+      </div>
+    
+      <div class="row align-items-start">
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :Color, class: "form-label" %>
+            <%= f.select :color, options_for_select(Post::COLOR), {include_blank: true}%>
+            <br>
+          </div>
+        </div>
+
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :assembly_Type, class: "form-label" %>
+            <%= f.select :assembly_type, options_for_select(Post::ASSEMBLY_TYPE), {include_blank: true}%>
+            <br>
+          </div>
+        </div>
+      </div>
+      
+      <div class="row align-items-start">
+        <div class="col-sm">
+          <div class="dropdown field mb-3 text-start">
+            <%= f.label :engine_capacity, class: "form-label" %>
+            <%= f.select :engine_capacity, options_for_select(Post::ENGINE_CAPACITY), {include_blank: true}%>
+            <br>
+          </div>
+        </div>
+        <div class="col-sm">
+			    <%= f.hidden_field :post_id, value: @post.id %>
+					<%= f.file_field :pictures, class: "form-control", multiple: true %>
+					<img id="img_prev" />
+        </div>
+
+      <div class="row align-items-start">
+        <div class="col-sm">
+          <%= f.label :primary_contact, class: "form-label" %>
+          <%= f.text_field :primary_contact, autofocus: true %>
+        </div>
+
+        <div class="col-sm">
+          <%= f.label :secondry_contact, class:"form-label" %>
+          <%= f.text_field :secondary_contact, autofocus: true %>
+        </div>
+
+        <div class="row align-items-start">
+          <div class="col-sm-12">
+            <div class="dropdown field mb-3 text-start"><br>
+              <%= f.label:add_discription %><br>
+              <%= f.text_area:add_discription %><br>
+            </div>
+          </div> 
+        </div>
+        <div style="width:20%; margin-left:45%;">
+          <%= f.hidden_field:user_id, value: current_user.id %>
+          <%= f.submit "update",class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>  
+  <% end %>
+</div>
