@@ -1,101 +1,99 @@
-<div class="container-fluid w-50 border rounded shadow mt-5 p-4 text-right border bg-light ">
+<div class="container-fluid w-75 border rounded shadow mt-5 mb-5 p-4 border bg-light text-center">
   <%= form_for @post, url: next_wizard_path, method: "PUT" do |f| %>
     <%= f.hidden_field :post_id, value: params[:post_id] %>
     <h3 class="h3 mb-3 fw-normal">Car Information</h3>
-    <br>
-    <div class="container-fluid">
-      <div class="row mt-3 align-items-start">
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+    
+      <div class="row">
+        <div class="col-sm-6">
+          <div  >
             <%= f.label :city, class: "form-label" %>
-            <%= f.select :city, options_for_select(Post::CITY), {include_blank: true}%>
+            <%= f.select :city, options_for_select(Post::CITY), {include_blank: true}, class: " form-control "%>
             <br>
           </div>
         </div>
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+        <div class="col-sm-6">
+          
             <%= f.label :milage, class: "form-label" %>
-            <%= f.text_field :milage, {include_blank: true} %>
-            <br>
-          </div>
+            <%= f.text_field :milage, class: "form-control" %>
+        
         </div>
       </div>
 
-      <div class="row align-items-start">
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+      <div class="row">
+        <div class="col-sm-6">
+          <div >
             <%= f.label :car_make, class: "form-label" %>
-            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}%>
+            <%= f.select :car_make, options_for_select(Post::CAR_MAKE), {include_blank: true}, class: "form-select"%>
             <br>
           </div>
         </div>
 
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+        <div class="col-sm-6">
+          <div>
             <%= f.label :engine_Type, class: "form-label" %>
-            <%= f.select :engine_type, options_for_select(Post::ENGINE_TYPE), {include_blank: true}%>
+            <%= f.select :engine_type, options_for_select(Post::ENGINE_TYPE), {include_blank: true}, class: "form-select"%>
             <br>
           </div>
         </div>
       </div>
     
-      <div class="row align-items-start">
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+      <div class="row">
+        <div class="col-sm-6">
+          
             <%= f.label :price, class: "form-label" %>
-            <%= f.text_field :price %>
+            <%= f.text_field :price, class: "form-control" %>
             <br>
-          </div>
+          
         </div>    
 
         <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+          <div >
             <%= f.label :transmission_type, class: "form-label" %>
-            <%= f.select :transmission_type, options_for_select(Post::TRANSMISSION_TYPE), {include_blank: true}%>
+            <%= f.select :transmission_type, options_for_select(Post::TRANSMISSION_TYPE), {include_blank: true}, class: "form-select"%>
             <br>
           </div>
         </div>
       </div>
     
-      <div class="row align-items-start">
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+      <div class="row">
+        <div class="col-sm-6">
+          <div >
             <%= f.label :Color, class: "form-label" %>
-            <%= f.select :color, options_for_select(Post::COLOR), {include_blank: true}%>
+            <%= f.select :color, options_for_select(Post::COLOR), {include_blank: true}, class: "form-select"%>
             <br>
           </div>
         </div>
 
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+        <div class="col-sm-6">
+          <div>
             <%= f.label :assembly_Type, class: "form-label" %>
-            <%= f.select :assembly_type, options_for_select(Post::ASSEMBLY_TYPE), {include_blank: true}%>
+            <%= f.select :assembly_type, options_for_select(Post::ASSEMBLY_TYPE), {include_blank: true}, class: "form-select"%>
             <br>
           </div>
         </div>
       </div>
       
-      <div class="row align-items-start">
-        <div class="col-sm">
-          <div class="dropdown field mb-3 text-start">
+      <div class="row">
+        <div class="col-sm-12">
+          <div>
             <%= f.label :engine_capacity, class: "form-label" %>
-            <%= f.select :engine_capacity, options_for_select(Post::ENGINE_CAPACITY), {include_blank: true}%>
+            <%= f.select :engine_capacity, options_for_select(Post::ENGINE_CAPACITY), {include_blank: true}, class: " form-select"%>
             <br>
           </div>
         </div>
-      
-      <div class="container">
-        <div class="row align-items-start">
-          <div class="col-sm">
-            <div class="dropdown field mb-3 text-start">
+        <div class="row">
+          <div class="col-sm-12">
+            
               <%= f.label:add_discription %><br>
-              <%= f.text_area:add_discription %><br>
-            </div>
+              <%= f.text_area:add_discription, class: "form-control" %><br>
+            
           </div> 
         </div>
+      <div style= "align-items:center;">
         <%= f.hidden_field:user_id, value: current_user.id %>
         <%= f.submit "next >",class: "btn btn-primary" %>
+        </div>
       </div>
-    </div>  
+    
   <% end %>
 </div>

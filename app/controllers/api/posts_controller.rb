@@ -1,11 +1,11 @@
 # frozen_string_literal: true
 
-class PostsController < ApplicationController
+class Api::PostsController < Api::ApplicationController
   before_action :find_post, only: %i[show edit update destroy]
   before_action :authorization, except: %i[show index new create]
-
+  before_action :authenticate_user!
   def index
-    @posts = Post.order(:id).page(params[:page])
+    @posts = Post.all
   end
 
   def new
@@ -28,19 +28,11 @@ class PostsController < ApplicationController
   def edit; end
 
   def update
-    if @post.update_attributes(post_params)
-      redirect_to post_path
-    else
-      render :edit
-    end
+    @post.update(post_params)
   end
 
   def destroy
-    if @post.destroy
-      redirect_to posts_path
-    else
-      redirect_to posts_path, alert: 'Try Later'
-    end
+    @post.destroy
   end
 
   private

@@ -11,7 +11,7 @@ class UpdateFavourite
 
   private
 
-  def toggle_favourite
+  def toggle_favourite # rubocop:disable Metrics/AbcSize
     favourite = user.favourites.exists?(post_id: post.id)
     if favourite
       user.favourites.find_by(post_id: post.id).destroy

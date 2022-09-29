@@ -9,4 +9,10 @@ Rails.application.routes.draw do
   resources :checkout, only: [:create]
   root 'home#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+
+  namespace :api do
+    post :auth, to: 'authentication#create'
+    get :dashboard, to: 'home#dashboard'
+    resources :posts
+  end
 end
