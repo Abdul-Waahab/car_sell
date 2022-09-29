@@ -1,11 +1,11 @@
 <div class="container-fluid w-50 h-100 mt-5 p-5 text-left border bg-light ">
   <div class="container text-center">
-    <% @post.each do |post| %> 
+    <% @posts.each do |post| %> 
       <h4><%= post.car_make %></h4>
       <h5><%= post.city %><h5>
       <%= link_to 'Read Post',post_path(post) %>       
     <% end %>
   </div><br><br>
-  <%= paginate @post %>
+  <%= paginate @posts %>
 </div>
 
